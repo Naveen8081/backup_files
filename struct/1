@@ -1,0 +1,20 @@
+#include<stdio.h>
+
+struct student
+{
+        int id; 
+        char name[20];
+        char phno[11];
+};
+
+int main()
+{
+	struct student s={2, "Arul", "9312345678"};
+	struct student* sptr=&s;
+//	printf("%d",(*sptr).id);
+//	printf("%s",(*sptr).name);
+
+	printf("%d\n",sptr->id);
+	printf("%s\n",sptr->name);
+
+}

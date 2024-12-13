@@ -1,0 +1,25 @@
+#include<stdio.h>
+int main(int argc,char* argv[])
+
+{
+	if(!(argc==3)) 
+	{
+		printf("Enter two arguments!\n");
+		return 0;
+	}   
+
+	FILE* src=fopen(argv[1],"r");
+	if(src == NULL)
+	{
+		printf("File not found!\n");
+		return 0;
+	}
+
+	FILE* dest=fopen(argv[2],"w");
+	int ch;
+	while((ch=fgetc(src))!=EOF)
+	{
+		fputc(ch,dest);
+	}
+}
+
